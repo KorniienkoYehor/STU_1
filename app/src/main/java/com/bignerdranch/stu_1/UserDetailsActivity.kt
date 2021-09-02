@@ -46,14 +46,7 @@ class UserDetailsActivity : Activity() {
         const val KEY_USER = "KEY_USER"
         fun getIntent(context: Context) = Intent(context, UserDetailsActivity::class.java)
 
-        fun getIntentEdit(context: Context,person: Person):Intent{
-            val child = Intent(context, UserDetailsActivity::class.java)
-            child.putExtra(KEY_PERSONE, person)
-
-            return child
-        }
-
-        fun getIntentEdit1(context: Context,person: Person)= Intent(context, UserDetailsActivity::class.java)
+        fun getIntentEdit(context: Context,person: Person)= Intent(context, UserDetailsActivity::class.java)
             .apply {
                 putExtra(KEY_PERSONE, person)
             }

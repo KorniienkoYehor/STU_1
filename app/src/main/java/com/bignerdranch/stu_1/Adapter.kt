@@ -68,15 +68,8 @@ class Adapter(
         return -1
     }
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view)  {
-//       private val name: TextView
-//       private val surname: TextView
-//       private val age: TextView
 
         init {
-
-//            name = view.findViewById(R.id.user_name)
-//            surname = view.findViewById(R.id.user_surname)
-//            age = view.findViewById(R.id.user_age)
 
             itemView.setOnClickListener {
                 val position: Int = adapterPosition

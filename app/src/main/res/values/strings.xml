@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">STU_1</string>
+    <string name ="name_user">Name</string>
+    <string name ="surname_user">Surname</string>
+    <string name ="age_user">Age</string>
+    <string name ="key_user">user</string>
+    <string name ="save">SAVE</string>
+    <string name ="delete">DELETE</string>
+    <string name ="cancel">CANCEL</string>
+    <string name ="add_user">ADD NEW USER</string>
+</resources>

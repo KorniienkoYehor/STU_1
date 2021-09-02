@@ -39,10 +39,10 @@ class Adapter(
         notifyItemChanged(dataSet.indexOf(person))
     }
 
-    fun changeUser(person:Person,){
-
-        dataSet.set(getPosition(person),person)
-        notifyItemChanged(getPosition(person))
+    fun changeUser(person:Person){
+        val position: Int=getPosition(person)
+        dataSet.set(position,person)
+        notifyItemChanged(position)
     }
 
     fun getCurrentItem(position:Int):Person{

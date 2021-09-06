@@ -4,16 +4,20 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import android.content.SharedPreferences
+import androidx.room.Room
 
 class Factory(context:Context) {
 
     var sharedpreferences: SharedPreferences =
         context.getSharedPreferences(PREFERENCE_KEY, Context.MODE_PRIVATE)
     var sharedHelper=SharedHelper(sharedpreferences)
+    val dataBaseHelper=DataBaseHelper(context)
+
+
 
     val factory = object : ViewModelProvider.Factory {
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            return PersonViewModel(sharedHelper) as T
+            return PersonViewModel(dataBaseHelper) as T
         }
     }
     companion object{

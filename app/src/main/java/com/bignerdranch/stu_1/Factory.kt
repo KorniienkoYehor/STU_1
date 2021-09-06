@@ -17,7 +17,7 @@ class Factory(context:Context) {
 
     val factory = object : ViewModelProvider.Factory {
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            return PersonViewModel(dataBaseHelper) as T
+            return PersonViewModel(sharedHelper) as T
         }
     }
     companion object{

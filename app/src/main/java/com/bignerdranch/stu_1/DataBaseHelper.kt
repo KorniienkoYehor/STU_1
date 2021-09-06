@@ -20,4 +20,11 @@ class DataBaseHelper(context:Context): StorageHelper {
         db.userDao().saveUsers(users.map { User.from(it) } as ArrayList<User>)
     }
 
+    override fun updateUser(person: Person) {
+        db.userDao().saveUser(User.from(person))
+    }
+
+    override fun deleteUser(person: Person) {
+        db.userDao().deleteUser(User.from(person))
+    }
 }

@@ -40,13 +40,13 @@ class PersonViewModel(
     fun changeUser(person: Person) {
         val position: Int = getPosition(person)
         userList.set(position, person)
-        storageHelper.saveUsers(userList)
+        storageHelper.updateUser(person)
     }
 
     fun delete(person: Person) {
         val position: Int = getPosition(person)
         userList.removeAt(position)
-        storageHelper.saveUsers(userList)
+        storageHelper.deleteUser(person)
     }
 
     fun getPosition(person: Person): Int {

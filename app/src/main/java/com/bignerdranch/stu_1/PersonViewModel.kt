@@ -11,8 +11,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
 class PersonViewModel(
-    //val sharedPref: SharedPreferences
-    val sharedHelper: SharedHelper
+    val storageHelper: StorageHelper
 ) :ViewModel() {
 
 
@@ -27,7 +26,7 @@ class PersonViewModel(
     }
 
     fun getPersons() {
-        userList=sharedHelper.getUsers()
+        userList=storageHelper.getUsers()
         usersLiveData.value = userList
     }
     private fun SharedPreferences.Editor.putParcelable(key: String, parcelable: Parcelable) {
@@ -36,19 +35,19 @@ class PersonViewModel(
     }
     fun addUser(person: Person){
         userList.add(person)
-        sharedHelper.saveUsers(userList)
+        storageHelper.saveUsers(userList)
     }
     fun changeUser(person: Person){
         val position: Int=getPosition(person)
         userList.set(position,person)
-        sharedHelper.saveUsers(userList)
+        storageHelper.saveUsers(userList)
 
         //sharedHelper.savePeople(userList)
     }
     fun delete(person: Person){
         val position: Int=getPosition(person)
         userList.removeAt(position)
-        sharedHelper.saveUsers(userList)
+        storageHelper.saveUsers(userList)
     }
 
 

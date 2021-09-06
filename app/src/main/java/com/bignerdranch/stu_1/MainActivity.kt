@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity(), Adapter.OnItemClickListener,
         setContentView(R.layout.activity_main)
 
         var factory=Factory(this)
-       // var sharedHelper=SharedHelper(factory.sharedpreferences)
         recyclerView = findViewById(R.id.recyclerview)
         adapter = Adapter(this, this)
 

@@ -10,6 +10,7 @@ class Factory(context:Context) {
     var sharedpreferences: SharedPreferences =
         context.getSharedPreferences(PREFERENCE_KEY, Context.MODE_PRIVATE)
     var sharedHelper=SharedHelper(sharedpreferences)
+
     val factory = object : ViewModelProvider.Factory {
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
             return PersonViewModel(sharedHelper) as T

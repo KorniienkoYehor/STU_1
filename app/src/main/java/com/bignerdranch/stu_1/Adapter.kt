@@ -13,8 +13,8 @@ class Adapter(
 ) :
     RecyclerView.Adapter<Adapter.ViewHolder>() {
 
-    private var dataSet= ArrayList<Person>()
 
+    private var dataSet= ArrayList<Person>()
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
 
@@ -25,9 +25,7 @@ class Adapter(
 
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-
         viewHolder.bind(dataSet[position])
-
     }
 
     override fun getItemCount() = dataSet.size
